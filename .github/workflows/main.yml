@@ -1,0 +1,33 @@
+name: Sutta Quotes RSS
+
+on:
+  schedule:
+    # Every 6 hours
+    - cron: '13 */5 * * *'
+  workflow_dispatch: 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Run generation script
+        run: node generate-rss-sutta-quotes.js
+
+      - name: Commit & Push changes (only if files changed)
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update Trích Dẫn Kinh Điển Nikaya RSS and quote history"
+          file_pattern: sutta-quotes.xml history-sutta-quotes.json cycle-state-sutta-quotes.json
+          commit_user_name: GitHub Action
+          commit_user_email: action@github.com
