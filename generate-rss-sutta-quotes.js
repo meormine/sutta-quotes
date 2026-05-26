@@ -161,13 +161,13 @@ const pubDate = new Date().toUTCString();
 const rssXml = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
   <channel>
-    <title>Sutta Quotes</title>
+    <title>Nikaya Sutta Quotes</title>
     <link>https://sutta-quotes.blogspot.com</link>
-    <description>Sutta Quotes</description>
+    <description>Nikaya Sutta Quotes</description>
     <lastBuildDate>${pubDate}</lastBuildDate>
     <image>
       <url>https://meormine.github.io/sutta-quotes/images/favicon6.ico</url>
-      <title>Sutta Quotes</title>
+      <title>Nikaya Sutta Quotes</title>
       <link>https://meormine.github.io/sutta-quotes/images/favicon6.ico</link>
     </image>
     ${itemsXml}
