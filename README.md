@@ -2,6 +2,8 @@
 
 A minimalist, responsive web application that displays inspirational quotes from the Pali Canon (Sutta Piṭaka), helping users reflect on the teachings of the Buddha. The app features categorization filters, randomized quote generation, and full responsive layout compatibility.
 
+<img width="1640" height="1499" alt="sutta-quotes blogspot com" src="https://github.com/user-attachments/assets/b8d7798d-22b5-4530-a537-1a158c0abd6d" />
+
 ## 🚀 Features
 
 - **Categorized Filtering:** Effortlessly browse and filter quotes by specific collections, including:
