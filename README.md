@@ -19,6 +19,7 @@ A minimalist, responsive web application that displays inspirational quotes from
   - **Thag** (Theragāthā)
   - **Thig** (Therīgāthā)
 - **Randomized Quotes:** Instantly load a new random quote from either the full library or within a specifically selected collection simply by clicking on the quote card.
+- **RSS Support:** Seamlessly syncs with your favorite RSS feed aggregator to regularly deliver daily reflections and quotes from the Sutta collections.
 - **Source Hyperlinks:** Each quote includes a direct link to its source reference on SuttaCentral for deep-dive reading and study.
 - **Responsive Layout:** Beautiful typography combining *Inter* and *Merriweather* fonts with support for multiple screen dimensions.
 - **Theme Support:** Features built-in styling variables supporting both light/dark aesthetic considerations.
