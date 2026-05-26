@@ -27,7 +27,7 @@ jobs:
       - name: Commit & Push changes (only if files changed)
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update Trích Dẫn Kinh Điển Nikaya RSS and quote history"
+          commit_message: "chore: update RSS and quote history"
           file_pattern: sutta-quotes.xml history-sutta-quotes.json cycle-state-sutta-quotes.json
           commit_user_name: GitHub Action
           commit_user_email: action@github.com
