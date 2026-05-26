@@ -149,7 +149,7 @@ const itemsXml = history.map(item => `
         ${item.image ? `<img src="${item.image}" alt="Buddhist imagery" style="max-width: 100%; height: auto; margin-bottom: 15px;" /><br>` : ''}
         ${item.content}
         <br><br>
-        <strong>Trích:</strong> ${item.ref}
+        <strong>From:</strong> ${item.ref}
         ${item.url ? `<br><a href="${item.url}">📖 Read this sutta</a>` : ''}
       ]]></description>
       ${item.image ? `<enclosure url="${item.image}" type="image/jpeg" length="0" />` : ''}
