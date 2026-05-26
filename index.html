@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#8b5cf6">
+	<link rel="icon" type="image/x-icon" href="./images/favicon6.ico">
+	<link href="./css/css.css" rel="stylesheet">
+	<link rel="apple-touch-icon" href="./images/icon-192-trichdan.png">
+    <title>Sutta Quotes</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-body: #ffd;
+			--background-image: url('./images/imgbk.png');
+            --bg-card: #ffd;
+            --bg-card-image: url('./images/imgbk.png');
+            --bg-card-border: 1px solid #333;        
+	        --text-primary: #2c2c2c;
+            --text-secondary: #5f6368;
+            --accent: #8b5a2b;
+            --btn-bg: #8b5a2b;
+            --btn-text: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 10px 30px rgba(139, 90, 43, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body.dark {
+            --bg-body: #121212;
+            --bg-card: #1e1e1e;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --accent: #cca43b;
+            --btn-bg: #cca43b;
+            --btn-text: #121212;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+			background-image: var(--background-image);
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            color: var(--accent);
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: transparent;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--text-primary);
+			border: 1px solid #b3b3b3;
+            border-radius: 5px;
+
+        }
+
+        /* Controls Grid (Giữ nguyên) */
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            padding: 8px 14px;
+            background: transparent;
+            border: 1px solid var(--text-secondary);
+            color: var(--text-secondary);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .filter-btn.active {
+            background: var(--btn-bg);
+            color: var(--btn-text);
+            border-color: var(--btn-bg);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Quote Card (Giữ nguyên) */
+        .quote-card {
+            background: var(--bg-card);
+			background-image: var(--bg-card-image);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+			border: var(--bg-card-border);
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+            margin-bottom: 30px;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+			cursor: pointer;           
+            transition: all 0.25s ease;
+        }
+
+        .quote-icon {
+            font-size: 2.5rem;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            color: var(--accent);
+            opacity: 0.2;
+            font-family: serif;
+        }
+
+        #quote-content {
+            font-family: 'Merriweather', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 25px;
+            white-space: pre-line;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        
+        #quote-content.fade-out { opacity: 0; }
+
+        /* Vùng chứa link */
+        #reference-container {
+            font-weight: 600;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        /* Style cho thẻ a (link) */
+        #quote-link {
+            color: var(--accent);
+            font-size: 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        #quote-link:hover {
+            text-decoration: underline;
+            color: var(--accent-dark, #a97142); /* Sử dụng màu đậm hơn khi hover */
+        }
+        
+        #quote-link::before {
+             content: "— ";
+        }
+
+        /* Actions (Giữ nguyên) */
+        .actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 12px 24px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #new-quote-btn {
+            background: var(--btn-bg);
+            color: var(--btn-text);
+        }
+        #new-quote-btn:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+
+        #copy-btn {
+            background: transparent;
+            border: 2px solid var(--btn-bg);
+            color: var(--text-primary);
+        }
+        body.dark #copy-btn {
+            color: var(--accent);
+        }
+        #copy-btn:hover {
+            background: rgba(139, 90, 43, 0.1);
+        }
+
+        @media (max-width: 600px) {
+            .theme-toggle { position: relative; display: block; margin: 0 auto 10px auto; }
+            #quote-content { font-size: 1.1rem; }
+			.quote-card { padding: 50px 20px; }
+
+            .actions { width: 100%; }
+            .action-btn { width: 100%; justify-content: center; }
+        }
+		
+
+.quote-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(139, 90, 43, 0.18);
+}
+
+body.dark .quote-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+/* Nhóm chứa 2 nút ghim ở góc phải */
+.header-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 8px; /* Khoảng cách giữa 2 nút */
+}
+
+/* Style chung cho các nút icon */
+.icon-btn {
+    background: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px; /* Chỉnh đệm cho cân đối */
+    text-decoration: none; /* Xóa gạch chân cho thẻ a */
+}
+
+/* Giao diện mobile */
+@media (max-width: 600px) {
+    .header-actions {
+        position: relative;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+    <div class="header-actions">
+        <a href="https://buddhanussati.github.io/dhamma-quotes/suttavi.xml" target="_blank" title="Đăng ký kênh RSS" class="icon-btn" id="rss-link">
+            <i class="fas fa-wireless"></i>
+        </a>
+        <button class="icon-btn" id="theme-toggle" title="Đổi giao diện">
+            <i class="fa-solid fa-sun-bright"></i>
+        </button>
+    </div>
+    <h1>Words of the&nbsp;Buddha</h1>
+</header>
+
+        <div class="controls">
+            <button class="filter-btn active" data-id="all">All</button>
+            <button class="filter-btn" data-id="dn">DN (Dīgha)</button>
+            <button class="filter-btn" data-id="mn">MN (Majjhima)</button>
+            <button class="filter-btn" data-id="sn">SN (Saṃyutta)</button>
+            <button class="filter-btn" data-id="an">AN (Aṅguttara)</button>
+            <button class="filter-btn" data-id="dhp">Dhp (Dhammapada)</button>
+            <button class="filter-btn" data-id="kp">Kp (Khuddakapāṭha)</button>
+            <button class="filter-btn" data-id="ud">Ud (Udāna)</button>
+            <button class="filter-btn" data-id="iti">Iti (Itivuttaka)</button>
+            <button class="filter-btn" data-id="snp">Snp (Suttanipāta)</button>
+            <button class="filter-btn" data-id="thag">Thag (Theragāthā)</button>
+            <button class="filter-btn" data-id="thig">Thig (Therīgāthā)</button>
+        </div>
+
+        <main class="quote-card">
+            <div class="quote-icon">“</div>
+            <div id="quote-content">Loading...</div>
+            <div id="reference-container"></div>
+        </main>
+
+        <div class="actions">
+            <button class="action-btn" id="copy-btn">📋 <span id="copy-text">Copy Text</span></button>
+            <button class="action-btn" id="new-quote-btn">Random Quote ➜</button>
+        </div>
+    </div>
+
+    <script src="td.js"></script>
+</body>
+</html>

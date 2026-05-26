@@ -1,0 +1,23 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+ font-family: "SourceSans3";
+ src: url("./webwebfonts/skolar-regular.woff");
+ src: url("./webwebfonts/skolar-regular.woff2");
+ font-weight: normal;
+ font-style: normal;
+  
+}
+@font-face {
+ font-family: "SourceSans3";
+ src: url("./webfonts/skolar-bold.woff");
+ src: url("./webfonts/skolar-bold.woff2"); 
+ font-weight: bold;
+ font-style: normal;
+}
+@font-face {
+ font-family: "SourceSans3";
+ src: url("./webfonts/skolar-italic.woff");
+ src: url("./webfonts/skolar-italic.woff2"); 
+ font-weight: normal;
+ font-style: italic;
+}
