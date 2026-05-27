@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
   <channel>
-    <title>Sutta Quotes</title>
+    <title>Nikaya Sutta Quotes</title>
     <link>https://sutta-quotes.blogspot.com</link>
-    <description>Sutta Quotes</description>
-    <lastBuildDate>Tue, 26 May 2026 21:57:18 GMT</lastBuildDate>
+    <description>Nikaya Sutta Quotes</description>
+    <lastBuildDate>Wed, 27 May 2026 06:51:10 GMT</lastBuildDate>
     <image>
       <url>https://meormine.github.io/sutta-quotes/images/favicon6.ico</url>
-      <title>Sutta Quotes</title>
+      <title>Nikaya Sutta Quotes</title>
       <link>https://meormine.github.io/sutta-quotes/images/favicon6.ico</link>
     </image>
     
+    <item>
+      <title><![CDATA[Quite secluded from sensual pleasures, secluded from unwholesome states, the bhikkhu enters and dwells in the first jhāna, which is accompanied by thought and examination,…]]></title>
+      <link>https://suttacentral.net/dn2</link>
+      <description><![CDATA[
+        <img src="https://budsas.net/senv/sen_vn001.jpg" alt="Buddhist imagery" style="max-width: 100%; height: auto; margin-bottom: 15px;" /><br>
+        Quite secluded from sensual pleasures, secluded from unwholesome states, the bhikkhu enters and dwells in the first jhāna, which is accompanied by thought and examination, with rapture and ease born of seclusion. He drenches, saturates, fills, and suffuses his body with the rapture and ease born of seclusion, so that no part of his entire body is not suffused with that rapture.
+        <br><br>
+        <strong>From:</strong> Dīgha Nikāya 2 – Sāmaññaphalasutta
+        <br><a href="https://suttacentral.net/dn2">📖 Read this sutta</a>
+      ]]></description>
+      <enclosure url="https://budsas.net/senv/sen_vn001.jpg" type="image/jpeg" length="0" />
+      <pubDate>Wed, 27 May 2026 06:51:10 GMT</pubDate>
+      <guid isPermaLink="false">1779864670136</guid>
+    </item>
+
     <item>
       <title><![CDATA[Elder Nun Vimalā, formerly a courtesan: Infatuated with my caste, With my beauty and youth, With fame and renown, I relied on my youth, Despising…]]></title>
       <link>https://suttacentral.net/thig5.2</link>
