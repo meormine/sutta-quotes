@@ -65,7 +65,7 @@ const BUDDHIST_IMAGES = [
 ];
 
 // ==================== 1. LOAD QUOTES ====================
-const { SuttaQuotesData } = require('./sutta-quotes.js');
+const { SuttaQuotesData } = require('./sutta-quotes-RSS.js');
 
 const allQuotes = SuttaQuotesData
     .map(item => ({
