@@ -144,7 +144,7 @@ const itemsXml = history.map(item => `
       <title><![CDATA[${item.title}]]></title>
       <link>${item.url || 'https://sutta-quotes.blogspot.com'}</link>
       <description><![CDATA[
-        ${item.image ? `<img src="${item.image}" alt="Buddhist imagery" style="max-width: 320px; height: auto; margin-bottom: 15px;" /><br>` : ''}
+        ${item.image ? `<img width="400" height="225" src="${item.image}" alt="Buddhist imagery" style="margin-bottom: 25px;" /><br>` : ''}
         ${item.content}
         <br><br>
         <strong>From:</strong> ${item.ref}
